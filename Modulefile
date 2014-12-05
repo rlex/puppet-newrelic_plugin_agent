@@ -1,7 +1,6 @@
 name    'lex-newrelic_plugin_agent'
-version '1.0.0'
+version '0.9.0'
 dependency 'puppetlabs/concat', '>= 1.0.2'
-dependency 'puppetlabs/stdlib', '>= 4.2.0'
 dependency 'puppetlabs/python', '>= 1.0.0'
 source 'git://github.com/rlex/puppet-newrelic_plugin_agent.git'
 author 'Lex Rivera <me@lex.io>'

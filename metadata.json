@@ -1,0 +1,42 @@
+{
+  "name": "lex-newrelic_plugin_agent",
+  "version": "0.9.0",
+  "author": "Lex Rivera <me@lex.io>",
+  "license": "Creative Commons Attribution 3.0 Unported License",
+  "summary": "Puppet newrelic-plugin-agent module",
+  "source": "https://github.com/rlex/puppet-newrelic_plugin_agent",
+  "project_page": "(https://forge.puppetlabs.com/lex/newrelic_plugin_agent)",
+  "issues_url": "https://github.com/rlex/puppet-newrelic_plugin_agent/issues",
+  "tags": ["newrelic", "newrelic-plugin-agent", "monitoring", "debian", "ubuntu"],
+  "operatingsystem_support": [
+    {
+      "operatingsystem": "RedHat"
+    },
+    {
+      "operatingsystem": "CentOS"
+    },
+    {
+      "operatingsystem": "OracleLinux"
+    },
+    {
+      "operatingsystem": "Debian"
+    },
+    {
+      "operatingsystem": "Ubuntu"
+    }
+  ],
+  "requirements": [
+    {
+      "name": "pe",
+      "version_requirement": "3.2.x"
+    },
+    {
+      "name": "puppet",
+      "version_requirement": "3.x"
+    }
+  ],
+  "dependencies": [
+    { "name": "puppetlabs/python", "version_requirement": ">= 1.0.0" },
+    { "name": "puppetlabs/concat", "version_requirement": ">= 1.0.0" }
+  ]
+}
