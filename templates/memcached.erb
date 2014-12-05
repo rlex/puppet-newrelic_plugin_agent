@@ -1,0 +1,9 @@
+  memcached:
+    name: <%= @name %>
+    host: <%= @host %>
+<% if @port -%>
+<%= "    port: #{@port}" %>
+<% end -%>
+<% if @path -%>
+<%= "    path: #{@path}" %>
+<% end -%>

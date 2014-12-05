@@ -1,0 +1,15 @@
+  redis:
+    - name: <%= "#{@name}" %>
+      host: <%= "#{@host}" %>
+<% if @port -%>
+<%= "      port: #{@port}" %>
+<% end -%>
+<% if @path -%>
+<%= "      path: #{@path}" %>
+<% end -%>
+<% if @password -%>
+<%= "      password: #{@password}" %>
+<% end -%>
+<% if @db_count -%>
+<%= "      db_count: #{@db_count}" %>
+<% end -%>
