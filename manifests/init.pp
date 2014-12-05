@@ -44,7 +44,10 @@ class newrelic_plugin_agent (
     ensure  => $service_ensure,
     name    => $newrelic_plugin_agent_service,
     enable  => $service_enable,
-    require => Package[$newrelic_plugin_agent_package],
+    require => [ Package[$newrelic_plugin_agent_package], 
+                 File[$newrelic_plugin_agent_confdir],
+                 File[$newrelic_plugin_agent_logdir],
+               ],
   }
 
   file { '/etc/init.d/newrelic-plugin-agent':
@@ -85,11 +88,17 @@ class newrelic_plugin_agent (
   if $restart {
     concat { $newrelic_plugin_agent_conffile:
       notify  => Service[$newrelic_plugin_agent_service],
-      require => Package[$newrelic_plugin_agent_package],
+      require => [ Package[$newrelic_plugin_agent_package], 
+                   File[$newrelic_plugin_agent_confdir],
+                   File[$newrelic_plugin_agent_logdir],
+                 ],
     }
   } else {
     concat { $newrelic_plugin_agent_conffile:
-      require => Package[$newrelic_plugin_agent_package],
+      require => [ Package[$newrelic_plugin_agent_package], 
+                   File[$newrelic_plugin_agent_confdir],
+                   File[$newrelic_plugin_agent_logdir],
+                 ],
     }
   }
 
