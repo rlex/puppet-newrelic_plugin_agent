@@ -1,15 +1,16 @@
-Very work-in-progress.  
+Work-in-progress.  
 Status:  
 1) basic config (see init.pp)  
-2) php-fpm, mongodb, apache, memcached monitoring  
+2) php-fpm, mongodb, nginx, apache, memcached, redis monitoring  
 3) no multi-daemon support (for now)  
 4) tested only on Debian 7.  
-5) no docs  
+5) Not all params are configurable from puppet
+6) Almost no docs except example (not with all options) config
 
 Example config:
 ```puppet
 class { newrelic_plugin_agent:
-  license_key => 'THIS_IS_WRONG_LICENSE_KEY',
+  license_key => 'THIS_IS_YOUR_LICENSE_KEY',
   newrelic_api_timeout => '10',
   wake_interval => '60',
   enable => true,
