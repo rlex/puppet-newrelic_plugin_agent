@@ -15,7 +15,7 @@ class newrelic_plugin_agent (
   # Localize some variables
   $newrelic_plugin_agent_package  = $newrelic_plugin_agent::params::newrelic_plugin_agent_package
   $newrelic_plugin_agent_conffile = $newrelic_plugin_agent::params::newrelic_plugin_agent_conffile
-  $newrelic_plugin_agent_confdir  = $newrelic_plugin_agent::params::newrelic_plugin_agent_conffile
+  $newrelic_plugin_agent_confdir  = $newrelic_plugin_agent::params::newrelic_plugin_agent_confdir
   $newrelic_plugin_agent_logdir   = $newrelic_plugin_agent::params::newrelic_plugin_agent_logdir
   $newrelic_plugin_agent_service  = $newrelic_plugin_agent::params::newrelic_plugin_agent_service
   $newrelic_plugin_agent_init     = $newrelic_plugin_agent::params::newrelic_plugin_agent_init
