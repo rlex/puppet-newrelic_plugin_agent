@@ -29,13 +29,15 @@ class newrelic_plugin_agent (
     name => $user,
     ensure => present,
     system => true,
+    before => Package[$newrelic_plugin_agent_package]
   }
 
   user { 'newrelic-user':
     name   => $user,
     system => true,
     ensure => present,
-    require => Group[$user]
+    require => Group[$user],
+    before => Package[$newrelic_plugin_agent_package]
   }
 
   service { 'newrelic-plugin-agent':
@@ -54,12 +56,16 @@ class newrelic_plugin_agent (
     ensure => 'directory',
     owner  => $user,
     group  => $user,
+    before => Service[$newrelic_plugin_agent_service],
+    require => [ Group[$user], User[$user] ]
   }
 
   file { $newrelic_plugin_agent_confdir:
     ensure => 'directory',
     owner  => $user,
     group  => $user,
+    before => Service[$newrelic_plugin_agent_service],
+    require => [ Group[$user], User[$user] ]
   }
 
   concat::fragment { 'newrelic_plugin_agent-header':
