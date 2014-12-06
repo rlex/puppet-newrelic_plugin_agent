@@ -26,25 +26,25 @@ class newrelic_plugin_agent (
   }
 
   group { 'newrelic':
-    name => $user,
+    name   => $user,
     ensure => present,
     system => true,
     before => Package[$newrelic_plugin_agent_package]
   }
 
   user { 'newrelic-user':
-    name   => $user,
-    system => true,
-    ensure => present,
+    name    => $user,
+    system  => true,
+    ensure  => present,
     require => Group[$user],
-    before => Package[$newrelic_plugin_agent_package]
+    before  => Package[$newrelic_plugin_agent_package]
   }
 
   service { 'newrelic-plugin-agent':
     ensure  => $service_ensure,
     name    => $newrelic_plugin_agent_service,
     enable  => $service_enable,
-    require => [ Package[$newrelic_plugin_agent_package], 
+    require => [ Package[$newrelic_plugin_agent_package],
                  File[$newrelic_plugin_agent_confdir],
                  File[$newrelic_plugin_agent_logdir],
                ],
@@ -56,18 +56,18 @@ class newrelic_plugin_agent (
   }
 
   file { $newrelic_plugin_agent_logdir:
-    ensure => 'directory',
-    owner  => $user,
-    group  => $user,
-    before => Service[$newrelic_plugin_agent_service],
+    ensure  => 'directory',
+    owner   => $user,
+    group   => $user,
+    before  => Service[$newrelic_plugin_agent_service],
     require => [ Group[$user], User[$user] ]
   }
 
   file { $newrelic_plugin_agent_confdir:
-    ensure => 'directory',
-    owner  => $user,
-    group  => $user,
-    before => Service[$newrelic_plugin_agent_service],
+    ensure  => 'directory',
+    owner   => $user,
+    group   => $user,
+    before  => Service[$newrelic_plugin_agent_service],
     require => [ Group[$user], User[$user] ]
   }
 
@@ -88,14 +88,14 @@ class newrelic_plugin_agent (
   if $restart {
     concat { $newrelic_plugin_agent_conffile:
       notify  => Service[$newrelic_plugin_agent_service],
-      require => [ Package[$newrelic_plugin_agent_package], 
+      require => [ Package[$newrelic_plugin_agent_package],
                    File[$newrelic_plugin_agent_confdir],
                    File[$newrelic_plugin_agent_logdir],
                  ],
     }
   } else {
     concat { $newrelic_plugin_agent_conffile:
-      require => [ Package[$newrelic_plugin_agent_package], 
+      require => [ Package[$newrelic_plugin_agent_package],
                    File[$newrelic_plugin_agent_confdir],
                    File[$newrelic_plugin_agent_logdir],
                  ],
