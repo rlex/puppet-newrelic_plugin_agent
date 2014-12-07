@@ -96,4 +96,12 @@ newrelic_plugin_agent::pgbouncer { 'pgbouncer 1':
   port => '6000',
   user => 'stats',
 }
+
+newrelic_plugin_agent::php_npc { 'PHP APC 1': 
+  scheme => 'http',
+  host => 'localhost',
+  verify_ssl_cert => 'true',
+  port => '80',
+  path => '/apc-nrp.php',
+}
 ```
