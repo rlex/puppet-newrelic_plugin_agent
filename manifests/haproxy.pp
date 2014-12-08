@@ -1,9 +1,9 @@
 define newrelic_plugin_agent::haproxy (
-    $scheme = 'http',
-    $host = 'localhost',
-    $port = '8080',
-    $verify_ssl_cert = 'true',
-    $path = '/haproxy?stats;csv',
+  $scheme = 'http',
+  $host = 'localhost',
+  $port = '8080',
+  $verify_ssl_cert = 'true',
+  $path = '/haproxy?stats;csv',
 ) {
   include newrelic_plugin_agent::params
 

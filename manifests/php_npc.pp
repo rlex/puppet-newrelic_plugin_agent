@@ -1,9 +1,9 @@
 define newrelic_plugin_agent::php_npc (
-    $scheme = 'http',
-    $host = 'localhost',
-    $verify_ssl_cert = 'true',
-    $port = '80',
-    $path = '/apc-nrp.php',
+  $scheme = 'http',
+  $host = 'localhost',
+  $verify_ssl_cert = 'true',
+  $port = '80',
+  $path = '/apc-nrp.php',
   ) {
   include newrelic_plugin_agent::params
 
