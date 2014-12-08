@@ -1,6 +1,6 @@
-This is module for managing modular newrelic agent from [MeetMe](http://github.com/MeetMe/newrelic-plugin-agent)
+This is module for managing modular newrelic agent from [MeetMe](http://github.com/MeetMe/newrelic-plugin-agent)  
 
-Work-in-progress, but already can be used in production.  
+It's still work-in-progress, but already can be used in production.  
 Status:  
 * Installs, configures and starts without problems 
 * All services supported (but not with all options) 
