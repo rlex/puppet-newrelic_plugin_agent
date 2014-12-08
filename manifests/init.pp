@@ -8,6 +8,7 @@ class newrelic_plugin_agent (
   $restart = true,
   $proxy = undef,
   $pidfile = '/var/run/newrelic/newrelic-plugin-agent.pid',
+  $version = installed
 ) {
 
   include newrelic_plugin_agent::params
@@ -23,6 +24,18 @@ class newrelic_plugin_agent (
   package { $newrelic_plugin_agent_package:
     ensure   => installed,
     provider => 'pip'
+  }
+
+  package { 'pymongo':
+    ensure   => installed,
+    provider => 'pip',
+    before   => Package[$newrelic_plugin_agent_package]
+  }
+
+  package { 'psycopg2':
+    ensure   => installed,
+    provider => 'pip',
+    before   => Package[$newrelic_plugin_agent_package]
   }
 
   group { 'newrelic':
