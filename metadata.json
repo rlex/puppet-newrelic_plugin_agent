@@ -1,6 +1,6 @@
 {
   "name": "lex-newrelic_plugin_agent",
-  "version": "0.9.0",
+  "version": "0.9.1",
   "author": "Lex Rivera <me@lex.io>",
   "license": "Creative Commons Attribution 3.0 Unported License",
   "summary": "Puppet newrelic-plugin-agent module",

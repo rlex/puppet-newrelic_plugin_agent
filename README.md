@@ -1,10 +1,11 @@
-Work-in-progress.  
+This is module for managing modular newrelic agent from [MeetMe](http://github.com/MeetMe/newrelic-plugin-agent)
+
+Work-in-progress, but already can be used in production.  
 Status:  
-* Basic config (see init.pp)  
-* PHP-fpm, mongodb, nginx, apache, memcached, redis monitoring  
+* Installs, configures and starts without problems 
+* All services supported (but not with all options) 
 * No multi-daemon support (for now)  
-* Tested only on Debian 7.  
-* Not all params are configurable from puppet  
+* Tested only on Debian 7, although it have RPM-based distros support 
 * Almost no docs except example (not with all options) config
 
 Example config:
