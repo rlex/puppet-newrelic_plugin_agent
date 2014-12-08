@@ -8,6 +8,7 @@ define newrelic_plugin_agent::mongodb (
   $ssl_certfile = undef,
   $ssl_cert_reqs = '0',
   $ssl_ca_certs = undef,
+  $databases = undef,
   ) {
   include newrelic_plugin_agent::params
 

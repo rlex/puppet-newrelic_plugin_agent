@@ -54,6 +54,14 @@ newrelic_plugin_agent::php_fpm { 'php-fpm 1':
   query => 'json',
 }
 
+newrelic_plugin_agent::redis { 'redis 1': 
+  host => 'localhost',
+  port => '6379',
+  #path => '/path/to/unix/socket',
+  #db_count => '1',
+  #password => 'pass',
+}
+
 newrelic_plugin_agent::riak { 'riak 1': 
   host => 'node0.riak0.scs.mtmeprod.net',
   verify_ssl_cert => 'true',
