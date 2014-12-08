@@ -8,6 +8,8 @@ class newrelic_plugin_agent::params {
       $newrelic_plugin_agent_package = 'newrelic-plugin-agent'
       $newrelic_plugin_agent_confdir = '/etc/newrelic'
       $newrelic_plugin_agent_init = 'newrelic_plugin_agent/etc/init.d/newrelic-plugin-agent.deb'
+      $newrelic_plugin_agent_mongodep = 'python-pymongo'
+      $newrelic_plugin_agent_postgredep = 'python-psycopg2'
     }
     'redhat', 'centos', 'scientific', 'fedora', 'OracleLinux': {
       $newrelic_plugin_agent_conffile = '/etc/newrelic/newrelic-plugin-agent.cfg'
@@ -16,6 +18,8 @@ class newrelic_plugin_agent::params {
       $newrelic_plugin_agent_package = 'newrelic-plugin-agent'
       $newrelic_plugin_agent_confdir = '/etc/newrelic/'
       $newrelic_plugin_agent_init = 'newrelic_plugin_agent/etc/init.d/newrelic-plugin-agent.deb'
+      $newrelic_plugin_agent_mongodep = 'python-pymongo'
+      $newrelic_plugin_agent_postgredep = 'python-psycopg2'
     }
     default: {
       fail("Module ${module_name} is not supported on ${::operatingsystem}")

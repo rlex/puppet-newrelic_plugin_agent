@@ -14,27 +14,27 @@ class newrelic_plugin_agent (
   include newrelic_plugin_agent::params
 
   # Localize some variables
-  $newrelic_plugin_agent_package  = $newrelic_plugin_agent::params::newrelic_plugin_agent_package
-  $newrelic_plugin_agent_conffile = $newrelic_plugin_agent::params::newrelic_plugin_agent_conffile
-  $newrelic_plugin_agent_confdir  = $newrelic_plugin_agent::params::newrelic_plugin_agent_confdir
-  $newrelic_plugin_agent_logdir   = $newrelic_plugin_agent::params::newrelic_plugin_agent_logdir
-  $newrelic_plugin_agent_service  = $newrelic_plugin_agent::params::newrelic_plugin_agent_service
-  $newrelic_plugin_agent_init     = $newrelic_plugin_agent::params::newrelic_plugin_agent_init
+  $newrelic_plugin_agent_package    = $newrelic_plugin_agent::params::newrelic_plugin_agent_package
+  $newrelic_plugin_agent_conffile   = $newrelic_plugin_agent::params::newrelic_plugin_agent_conffile
+  $newrelic_plugin_agent_confdir    = $newrelic_plugin_agent::params::newrelic_plugin_agent_confdir
+  $newrelic_plugin_agent_logdir     = $newrelic_plugin_agent::params::newrelic_plugin_agent_logdir
+  $newrelic_plugin_agent_service    = $newrelic_plugin_agent::params::newrelic_plugin_agent_service
+  $newrelic_plugin_agent_init       = $newrelic_plugin_agent::params::newrelic_plugin_agent_init
+  $newrelic_plugin_agent_mongodep   = $newrelic_plugin_agent::params::newrelic_plugin_agent_mongodep
+  $newrelic_plugin_agent_postgredep = $newrelic_plugin_agent::params::newrelic_plugin_agent_postgredep
 
   package { $newrelic_plugin_agent_package:
     ensure   => installed,
     provider => 'pip'
   }
 
-  package { 'pymongo':
+  package { $newrelic_plugin_agent_mongodep:
     ensure   => installed,
-    provider => 'pip',
     before   => Package[$newrelic_plugin_agent_package]
   }
 
-  package { 'psycopg2':
+  package { $newrelic_plugin_agent_postgredep:
     ensure   => installed,
-    provider => 'pip',
     before   => Package[$newrelic_plugin_agent_package]
   }
 
