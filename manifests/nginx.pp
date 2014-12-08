@@ -10,7 +10,7 @@ define newrelic_plugin_agent::nginx (
   $newrelic_plugin_agent_conffile = $newrelic_plugin_agent::params::newrelic_plugin_agent_conffile
 
   concat::fragment { "newrelic_plugin_agent-nginx-${name}":
-    order   => '7',
+    order   => '08',
     target  => $newrelic_plugin_agent_conffile,
     content => template('newrelic_plugin_agent/nginx.erb'),
   }

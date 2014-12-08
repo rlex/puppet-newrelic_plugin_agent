@@ -72,7 +72,7 @@ class newrelic_plugin_agent (
   }
 
   concat::fragment { 'newrelic_plugin_agent-header':
-    order   => '00',
+    order   => '01',
     target  => $newrelic_plugin_agent_conffile,
     content => template('newrelic_plugin_agent/newrelic-plugin-agent-header.cfg.erb'),
     require => Package[$newrelic_plugin_agent_package],

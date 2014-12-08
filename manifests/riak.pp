@@ -8,7 +8,7 @@ define newrelic_plugin_agent::riak (
   $newrelic_plugin_agent_conffile = $newrelic_plugin_agent::params::newrelic_plugin_agent_conffile
 
   concat::fragment { "newrelic_plugin_agent-riak-${name}":
-    order   => '13',
+    order   => '14',
     target  => $newrelic_plugin_agent_conffile,
     content => template('newrelic_plugin_agent/riak.erb'),
   }
