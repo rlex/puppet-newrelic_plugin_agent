@@ -1,5 +1,4 @@
 define newrelic_plugin_agent::haproxy (
-    $name = 'haproxy',
     $scheme = 'http',
     $host = 'localhost',
     $port = '8080',
