@@ -1,9 +1,9 @@
 define newrelic_plugin_agent::rabbitmq (
-    $host = 'localhost',
-    $port = '15672',
-    $verify_ssl_cert = 'true',
-    $username = 'guest',
-    $password = 'guest',
+  $host = 'localhost',
+  $port = '15672',
+  $verify_ssl_cert = 'true',
+  $username = 'guest',
+  $password = 'guest',
 ) {
   include newrelic_plugin_agent::params
 
