@@ -1,0 +1,23 @@
+### 0.9.1
+
+Overall stable and can be used in production, but still lacks many features 
+
+[BUGFIX] Concat ordering fixed
+[BUGFIX] Add pymongo and psycopg2 dependencies installation
+[FEATURE] Support for CouchDB
+[FEATURE] Support for ElasticSearch
+[FEATURE] Support for HAProxy
+[FEATURE] Support for PGBouncer
+[FEATURE] Support for APC added
+[FEATURE] Support for PostgreSQL added
+[FEATURE] Support for Riak added
+[FEATURE] Support for uWSGI added
+[FEATURE] Support for RabbitMQ added
+[FEATURE] MongoDB class now supports multiple databases
+
+For list of known issues, refer
+
+
+### 0.9.0
+
+Initial release

@@ -113,4 +113,18 @@ newrelic_plugin_agent::php_npc { 'PHP APC 1':
   port => '80',
   path => '/apc-nrp.php',
 }
+
+newrelic_plugin_agent::rabbitmq { 'RabbitMQ 1':
+  host => 'localhost',
+  port => '15672',
+  verify_ssl_cert => 'true',
+  username => 'guest',
+  password => 'guest',
+}
+
+newrelic_plugin_agent::elasticsearch { 'ElasticSearch 1':
+  host => 'localhost',
+  port => '9200',
+  scheme => 'http',
+}
 ```
