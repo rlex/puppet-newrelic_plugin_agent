@@ -22,7 +22,7 @@
 <%= "    ssl_ca_certs: #{@ssl_ca_certs}" %>
 <% end -%>
 <% if @databases -%>
-<%= "    databases:"
+<%= "    databases:" %>
 <% [@databases].flatten.compact.each do |database| -%>
 <%= "      - #{database}" %>
 <% end -%>
