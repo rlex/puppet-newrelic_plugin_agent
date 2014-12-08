@@ -36,6 +36,7 @@ newrelic_plugin_agent::mongodb { 'mongo 1':
   host => 'localhost',
   port => '27017',
   ssl => 'False',
+  databases => [ 'first-db', 'second-db' ]
 }
 
 newrelic_plugin_agent::nginx { 'nginx 1':
