@@ -11,13 +11,13 @@ Status:
 Example config:
 ```puppet
 class { newrelic_plugin_agent:
-  license_key => 'THIS_IS_YOUR_LICENSE_KEY',
+  license_key          => 'THIS_IS_YOUR_LICENSE_KEY',
   newrelic_api_timeout => '10',
-  wake_interval => '60',
-  enable => true,
-  user => 'newrelic',
-  restart => true,
-  pidfile => "/var/run/newrelic/newrelic-plugin-agent.pid",
+  wake_interval        => '60',
+  enable               => true,
+  user                 => 'newrelic',
+  restart              => true,
+  pidfile              => "/var/run/newrelic/newrelic-plugin-agent.pid",
 }
 
 newrelic_plugin_agent::memcached { 'memcached 1':
@@ -26,56 +26,56 @@ newrelic_plugin_agent::memcached { 'memcached 1':
 }
 
 newrelic_plugin_agent::apache_httpd { 'apache 1': 
-  scheme => 'http',
-  host => 'localhost',
+  scheme          => 'http',
+  host            => 'localhost',
   verify_ssl_cert => 'True',
-  port => '80',
-  path => '/server-status'
+  port            => '80',
+  path            => '/server-status'
 }
 
 newrelic_plugin_agent::mongodb { 'mongo 1':
-  host => 'localhost',
-  port => '27017',
-  ssl => 'False',
+  host      => 'localhost',
+  port      => '27017',
+  ssl       => 'False',
   databases => [ 'first-db', 'second-db' ]
 }
 
 newrelic_plugin_agent::nginx { 'nginx 1':
-  scheme => 'http',
-  host => 'localhost',
+  scheme          => 'http',
+  host            => 'localhost',
   verify_ssl_cert => 'False',
-  port => '80',
-  path => '/server-status'
+  port            => '80',
+  path            => '/server-status'
 }
 
 newrelic_plugin_agent::php_fpm { 'php-fpm 1':
   scheme => 'https',
-  host => 'localhost',
-  port => '443',
-  path => '/fpm_status',
-  query => 'json',
+  host   => 'localhost',
+  port   => '443',
+  path   => '/fpm_status',
+  query  => 'json',
 }
 
 newrelic_plugin_agent::redis { 'redis 1': 
-  host => 'localhost',
-  port => '6379',
-  #path => '/path/to/unix/socket',
+  host      => 'localhost',
+  port      => '6379',
+  #path     => '/path/to/unix/socket',
   #db_count => '1',
   #password => 'pass',
 }
 
 newrelic_plugin_agent::riak { 'riak 1': 
-  host => 'node0.riak0.scs.mtmeprod.net',
+  host            => 'node0.riak0.scs.mtmeprod.net',
   verify_ssl_cert => 'true',
-  port => '8098'
+  port            => '8098'
 }
 
 newrelic_plugin_agent::couchdb { 'couchdb 1': 
-  host => 'localhost',
+  host            => 'localhost',
   verify_ssl_cert => 'true',
-  port => '5984',
-  username => 'foo',
-  password => 'bar',
+  port            => '5984',
+  username        => 'foo',
+  password        => 'bar',
 }
 
 newrelic_plugin_agent::uwsgi { 'uwsgi 1': 
@@ -85,19 +85,19 @@ newrelic_plugin_agent::uwsgi { 'uwsgi 1':
 }
 
 newrelic_plugin_agent::haproxy { 'haproxy 1': 
-  name => 'haproxy',
-  scheme => 'http',
-  host => 'localhost',
-  port => '8080',
+  name            => 'haproxy',
+  scheme          => 'http',
+  host            => 'localhost',
+  port            => '8080',
   verify_ssl_cert => 'true',
-  path => '/haproxy?stats;csv',
+  path            => '/haproxy?stats;csv',
 }
 
 newrelic_plugin_agent::postgresql { 'postgresql 1': 
-  host => 'localhost',
-  port => '5432',
-  user => 'postgres',
-  dbname => 'postgres',
+  host      => 'localhost',
+  port      => '5432',
+  user      => 'postgres',
+  dbname    => 'postgres',
   superuser => 'False',
 }
 
@@ -108,24 +108,24 @@ newrelic_plugin_agent::pgbouncer { 'pgbouncer 1':
 }
 
 newrelic_plugin_agent::php_npc { 'PHP APC 1': 
-  scheme => 'http',
-  host => 'localhost',
+  scheme          => 'http',
+  host            => 'localhost',
   verify_ssl_cert => 'true',
-  port => '80',
-  path => '/apc-nrp.php',
+  port            => '80',
+  path            => '/apc-nrp.php',
 }
 
 newrelic_plugin_agent::rabbitmq { 'RabbitMQ 1':
-  host => 'localhost',
-  port => '15672',
+  host            => 'localhost',
+  port            => '15672',
   verify_ssl_cert => 'true',
-  username => 'guest',
-  password => 'guest',
+  username        => 'guest',
+  password        => 'guest',
 }
 
 newrelic_plugin_agent::elasticsearch { 'ElasticSearch 1':
-  host => 'localhost',
-  port => '9200',
+  host   => 'localhost',
+  port   => '9200',
   scheme => 'http',
 }
 ```
